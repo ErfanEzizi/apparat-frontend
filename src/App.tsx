@@ -15,14 +15,14 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Signup />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
 
         {/* Private Routes */}
         <Route element={<PrivateRoute />}>
           {/* Navbar is shown only on private routes */}
           <Route element={<NavbarWrapper />}>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/jobs" element={<JobMap />} />
             <Route path="/jobs/create" element={<CreateJob />} />
             <Route path="/jobs/applicants" element={<JobApplicants />} />

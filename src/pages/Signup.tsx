@@ -3,6 +3,7 @@ import { SignupFormInputs, SignupSchema } from "../validations/Signup";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axiosInstance from "../services/axiosInstance";
 import { useBreadcrumb } from "../contexts/BreadcrumbContext";
+import { Link } from "react-router-dom";
 
 const Signup: React.FC = () => {
     const {
@@ -86,6 +87,7 @@ const Signup: React.FC = () => {
           >
             Signup
           </button>
+          <Link to='/login' className="text-primary-dark">Already have an account</Link>
         </form>
       </div>
     );

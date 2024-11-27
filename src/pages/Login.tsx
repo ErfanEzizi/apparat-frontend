@@ -3,7 +3,7 @@ import { LoginFormInputs, LoginSchema } from "../validations/Login";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axiosInstance from "../services/axiosInstance";
 import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useBreadcrumb } from "../contexts/BreadcrumbContext";
 
 const Login: React.FC = () => {
@@ -24,7 +24,7 @@ const Login: React.FC = () => {
         const response = await axiosInstance.post("/users/login", data);
         login(response.data.token)
         setBreadcrumb("Login successful!", "success");
-        navigate("/home"); // Redirect to Home
+        navigate("/"); // Redirect to Home
       } catch (error: any) {
         setBreadcrumb("Login failed!", "error");
       }
@@ -68,6 +68,7 @@ const Login: React.FC = () => {
           >
             Login
           </button>
+          <Link to='/signup' className="text-primary-dark">create account</Link>
         </form>
       </div>
     );

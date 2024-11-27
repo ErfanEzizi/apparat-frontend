@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-primary-light text-white p-4">
       <div className="flex justify-between items-center max-w-6xl mx-auto">
         <div className="flex items-center space-x-4 gap-5">
-          <Link to="/home" className="text-2xl font-bold">
+          <Link to="/" className="text-2xl font-bold">
             <img src="/logo_1.svg" alt="aparat_logo" className="w-9"/>
           </Link>
           {isAuthenticated && role === "CLIENT" && (
